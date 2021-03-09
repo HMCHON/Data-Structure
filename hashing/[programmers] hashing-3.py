@@ -43,10 +43,22 @@ def solution(clothes):
 '''
 다른 풀이 [1]
 '''
-  
-  def solution(clothes):
+def solution(clothes):
     from collections import Counter
     from functools import reduce
     cnt = Counter([kind for name, kind in clothes])
     answer = reduce(lambda x, y: x*(y+1), cnt.values(), 1) - 1
     return answer
+
+
+'''
+다른 풀이 [2]
+'''
+import collections
+from functools import reduce
+
+def solution(c):
+    return reduce(lambda x,y:x*y,[a+1 for a in collections.Counter([x[1] for x in c]).values()])-1
+
+
+
