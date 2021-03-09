@@ -35,6 +35,27 @@ print(dictionary)
 del dictionary['A']
 ```
 
+### [4] 출력 설정
+```sh
+print(answer.keys())          # dict_keys(['leo']
+print(list(answer.keys())[0]) # leo
+```
+
+### [5] temp 사용
+```sh
+def solution(phone_book):
+    answer = True
+    hash_map = {}
+    for phone_number in phone_book:
+        hash_map[phone_number] = 1 # {'119': 1, '97674223': 1, '1195524421': 1}
+    for phone_number in phone_book:
+        temp = ""
+        for number in phone_number: #전화번호를 한글자로 쪼개서 반복문 '119'이면 '1' '1' '9'
+            temp += number # 1 -> 11 -> 119 -> 9 -> 97 -> ... -> 1195524421
+            if temp in hash_map and temp != phone_number: # temp가 hash_map에 있지만 phone_number는 아니라면...
+                answer = False
+    return answer
+```
 
 
 
