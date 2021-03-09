@@ -41,7 +41,7 @@ print(answer.keys())          # dict_keys(['leo']
 print(list(answer.keys())[0]) # leo
 ```
 
-### [5] temp 사용
+### [5] temp 사용 (리스트로 묶여있는 문자열에서 중복 문자 찾기)
 ```sh
 def solution(phone_book):
     answer = True
