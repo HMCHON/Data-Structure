@@ -41,7 +41,35 @@ print(answer.keys())          # dict_keys(['leo']
 print(list(answer.keys())[0]) # leo
 ```
 
-### [5] temp 사용 (리스트로 묶여있는 문자열에서 중복 문자 찾기)
+### [5] key와 value 이용하기
+```sh
+>>> a = {'alice': [1, 2, 3], 'bob': 20, 'tony': 15, 'suzy': 30}
+>>> for key in a:
+...     print(key)
+... 
+alice
+bob
+tony
+suzy
+```
+```sh
+>>> for val in a.values():
+...     print(val)
+... 
+[1, 2, 3]
+20
+15
+30   
+```
+
+```sh
+sum_all = []
+for val in ndict.values():
+    sum_all.append(sum(val)) # [1450, 3100]
+```
+
+
+### [6] temp 사용 (리스트로 묶여있는 문자열에서 중복 문자 찾기)
 ```sh
 def solution(phone_book):
     answer = True
@@ -56,11 +84,37 @@ def solution(phone_book):
                 answer = False
     return answer
 ```
+### [7] defalutdict 활용 예시
+```sh
+from collections import defaultdict
 
+genres = ["classic", "pop", "classic", "classic", "pop"]
+plays = [500, 600, 150, 800, 2500]
 
+ndict = defaultdict(list)
+for k, v in zip(genres,plays):
+    ndict[k].append(v) # defaultdict(<class 'list'>, {'classic': [500, 150, 800], 'pop': [600, 2500]})
+```
 
+### [8] itemgetter
+```sh
+from operater import imtegetter
 
+sorted(student_tuples, key=itemgetter(2))
+#[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+```
+```sh
+# 먼저 grade로 정렬한 다음 age로 정렬하려면
+sorted(student_tuples, key=itemgetter(1,2))
+# [('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
+```
 
+### [9] enumerate
+```sh
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+list(enumerate(seasons))
+# [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+```
 
 
 
