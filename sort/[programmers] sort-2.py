@@ -29,5 +29,14 @@ def solution(numbers):
 
     return answer
   
-  
+  '''
+  다른 풀이 1
+  '''
+def solution(numbers):
+    str_num = sorted(list(map(str, numbers)),key = lambda x:x*3 ,reverse=True) 
+    #['666','222','101010'] -> ['6', '2', '10']
+    answer = str(int(''.join(str_num)))
+    return answer
+
+
   
