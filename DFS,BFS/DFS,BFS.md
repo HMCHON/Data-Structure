@@ -128,10 +128,37 @@ visited = [False] * 9
 bfs(graph, 1, visited) # 1 2 3 6 7 4 5 6
 ```
 
+### list 다루기
+```sh
+list1 = [[1, 10], [2, 22], [3, 19]]
+list2 = [[4, 2], [5, 9], [6, 3]]
 
+list3 = list(map(list.__add__, list1, list2))
+print(list3) # [[1, 10, 4, 2], [2, 22, 5, 9], [3, 19, 6, 3]]
+```
 
+```sh
+import itertools
 
+list1 = [[1, 10], [2, 22], [3, 19]]
+list2 = [[4, 2], [5, 9], [6, 3]]
 
+list3 = list(map(list.__add__, list1, list2))
+list4 = list(itertools.chain(*list3))
+print(list4) # [1, 10, 4, 2, 2, 22, 5, 9, 3, 19, 6, 3]
+```
+
+```sh
+list1 = [[1, 10], [2, 22], [3, 19]]
+list2 = [[4, 2], [5, 9], [6, 3]]
+
+list3 = list(zip(list1, list2))
+print(list3) # [([1, 10], [4, 2]), ([2, 22], [5, 9]), ([3, 19], [6, 3])]
+```
+```sh
+array = list(product([+1,-1], repeat=(n-1)))
+print(array) # [(1, 1, 1, 1), (1, 1, 1, -1), (1, 1, -1, 1), ... (1, 1, -1, -1)]
+```
 
 
 
